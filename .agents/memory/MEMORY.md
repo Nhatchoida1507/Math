@@ -1,0 +1,1 @@
+- [Calculator scope](calculator-scope.md) — the user wants only a basic JavaScript terminal calculator.
