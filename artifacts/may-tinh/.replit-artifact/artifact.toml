@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Máy tính cơ bản"
+description = "Máy tính cơ bản bằng tiếng Việt để thực hiện phép cộng, trừ, nhân và chia với bàn phím trên màn hình hoặc bàn phím máy tính."
+version = "1.0.0"
+id = "artifacts/may-tinh"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19987
+
+[services.development]
+run = "pnpm --filter @workspace/may-tinh run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/may-tinh", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/may-tinh/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19987"
+BASE_PATH = "/"
