@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "calculator": "node ./src/calculator.js",
     "hello": "tsx ./src/hello.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
